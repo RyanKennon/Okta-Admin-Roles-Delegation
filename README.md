@@ -127,18 +127,68 @@
 
 ## 2) Standard Admin Roles
 
+### Assign Read Only Administrator to Sam Patel
+
+1. In the **Okta Administrator Console** open the **Security** dropdown then **Administrators** then open the **Admins** tab
+2. Press **Add Administrator** under **Select Admin** choose **Sam Patel**
+3. Under **Role** choose **Read-Only Administrator** then **Save Changes**
 
 
+# Image 17
 
+### Assign Help Desk Administrator to Riley Carter
 
+1. Select **Add Administrator** again then under **Select Admin** choose **Riley Carter**
+2. Under **Role** choose **Help Desk Administrator** then **Save Changes**
 
+# Image 18
 
+### Test Read Only Administrator as Sam Patel
 
+1. Log in to **Okta** as **Sam Patel** in an **incognito** browser
+2. Open the Directory** dropdown then **People** then open **Avery Brooks's** profile
+3. Confirm there is no ability to change the account such as; **Reset Password, Deactivate, or Edit Profile**
 
+# Image 19
 
+4. Open the **Security** dropdown then **Authentication Policies**
+5. Choose **App Sign-In** then open **Okta Dashboard**
+6. Confirm there is no option to edit the policy or add rules to the policy
 
+# Image 20
 
+7. Sign out of Sam Patel's account
 
+### Test Help Desk Administrator as Riley Carter
+
+1. Log in to **Okta** as **Riley Carter** in an **incognito** browser
+2. Open the Directory** dropdown then **People** then open **Avery Brooks's** profile
+3. Confirm there is an ability to **Reset or Remove Password** and to **Reset Authenticators** but no **Deactivate** account option
+
+# Image 21
+
+4. Select **Reset Password** then **Send a Reset Password Email**
+
+# Image 22
+
+5. Sign out of Riley Carter's account
+
+### Verify in the System Logs
+
+1. In the **Okta Administrator Console** open the **Reports** dropdown  then **System Log**
+2. In the **Search** function enter the following code:
+   `eventType eq "user.account.privilege.grant"`
+
+# Image 23
+# Image 24
+
+3. In the **Search** function enter the following code:
+   `eventType eq "user.account.reset_password" and actor.alternateId eq "riley.carter@kennon.tech"`
+
+# Image 25
+# Image 26
+
+---
 
 
 
