@@ -192,17 +192,39 @@
 
 ## 3) Scoped Delegation with a Standard Role
 
+### Scope Riley Carter to Kennon Finance
 
+1. In the **Okta Administrator Console** open the **Security** dropdown then **Administrators**
+2. Open the **Admins** tab then next to **Riley Carter** open the **Edit** dropdown then **Edit Assignment**
+3. Next to **Groups** select **Edit**
+4. Uncheck the box labeled **Constrain this Role to the Entire Organization**
+5. In the **Search by Groups** box search **Kennon Finance** then select **Add** then **Confirm**
 
+# Image 27
 
+### Test Riley on a Finance User
 
+1. Log in to **Riley Carter's** account in an **incognito** browser
+2. Open the **Directory** dropdown then select **People** then open **Avery Brooks's** profile
+3. Open the **More Actions** dropdown and confirm **Reset Authenticators** appears
+4. Press **Resend Password Email** then **Reset Password** then **Sign Out**
 
+# Image 28
 
+### Verify in the System Log
 
+1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
+2. In the **Search** function enter the following code:
+   `eventType sw "user.account.privilege" and target.alternateId eq "riley.carter@kennon.tech"`
 
+# Image 29
+# Image 30
 
+3. In the **Search** function enter the following code:
+   `eventType eq "user.account.reset_password" and actor.alternateId eq "riley.carter@kennon.tech"`
 
-
+# Image 31
+# Image 32
 
 
 
