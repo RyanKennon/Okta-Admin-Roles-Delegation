@@ -226,6 +226,102 @@
 # Image 31
 # Image 32
 
+## 4) Custom Admin Role and Resource Set
+
+### Remove Sam's Read Only Role
+
+1. In the **Okta Administrator Console** open the **Security** dropdown then select **Administrators**
+2. Open the **Admins** tab then next to **Sam Patel** open the **Edit** dropdown then select **Edit Assignments**
+3. Next to the **Read-Only Administrator** role press the **Trashcan** then **Save Changes**
+
+# Image 33
+
+### Create the Custom Role
+
+1. Open the **Roles** tab then press **Create New Role**
+2. Create a role with the following information then **Save Role:**
+
+   - **General Information**
+   - **Role Name:** Kennon Password Reset
+   - **Role Description:** Reset passwords and unlock users only
+   - **User Permissions**
+   - **View Users and their Details:** Check
+   - **Reset Users' Passwords:** Check
+   - **Unlock Users:** Check
+
+# Image 34
+
+### Create the Resource Set
+
+1. Open the **Resources** tab then press **Create New Resource Set**
+2. Create a resource set with the following information then **Create:**
+
+   - **General Information**
+   - **Resource Set Name:** Kennon Sales Resources
+   - **Resource Set Description:** Kennon Sales group and its members
+   - **Resources**
+   - **Users:** Kennon Sales
+
+# Image 35
+
+### Assign Custom Role to Sam Patel
+
+1. Open the **Admins** tab then press **Add Administrator**
+2. Create an administrator with the following information then **Save Changes:**
+
+   - **Admin:** Sam Patel
+   - **Role:** Kennon Password Reset
+   - **Resource Set:** Kennon Sales Resources
+
+# Image 36
+
+### Test Sam Patel on a Sales User
+
+1. Log in to **Sam Patel's** account in an **incognito** browser
+2. Open the **Directory** dropdown then select **People** then open **Casey Nguyen's** profile
+3. Press **Reset or Remove Password** then **Sign Out**
+
+# Image 37
+
+
+### Verify in the System Logs
+
+1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
+2. In the **Search** function enter the following code:
+   `eventType eq "iam.role.create"`
+
+# Image 38
+# Image 39
+
+3. In the **Search** function enter the following code:
+   `eventType eq "iam.resourceset.create"`
+
+# Image 40
+# Image 41
+
+4. In the **Search** function enter the following code:
+   `eventType sw "user.account.privilege" and target.alternateId eq "sam.patel@kennon.tech"`
+
+# Image 42
+# Image 43
+
+5. In the **Search** function enter the following code:
+   `eventType eq "user.account.reset_password" and actor.alternateId eq "sam.patel@kennon.tech"`
+
+# Image 44
+# Image 45
+
+## 5) App Administrator Scope to One App
+
+
+
+
+
+
+
+
+
+
 
 
 
