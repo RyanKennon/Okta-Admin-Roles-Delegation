@@ -313,10 +313,77 @@
 
 ## 5) App Administrator Scope to One App
 
+### Create Two Test Apps
 
+1. In the **Okta Administrator Console** open the **Applications and Resources** dropdown then select **Applications**
+2. Press **Browse App Catalog** and search **Bookmark App** then **Add Integration**
+3. Create the first app with the following information then **Done:**
 
+   - **Application Label:** Kennon Payroll
+   - **URL:** https://example.com
 
+# Image 46
 
+4. Press **Back to Applications** then **Browse App Catalog** and search **Bookmark App** then **Add Integration**
+5. Create the second app with the following information then **Done:**
+
+   - **Application Label:** Kennon CRM
+   - **URL:** https://example.org
+
+# Image 47
+
+### Assign Application Administrator to Taylor
+
+1. Open the **Security** dropdown then **Administrators** open the **Admins** tab then press **Add Administrator**
+2. Create an administrator with the following information then **Save Changes:**
+
+   - **Admin:** Taylor Reed
+   - **Role:** Application Administrator
+   - **Applications:** Kennon Payroll
+
+# Image 48
+
+### Test Taylor on the Scoped App
+
+1. Log in to **Okta** as **Taylor Reed** in an **incognito** browser
+2. Open the **Applications and Resources** dropdown then select **Applications**
+3. Confirm that **Kennon Payroll** appears and the **Kennon CRM** doesn't appear
+
+# Image 49
+
+4. Open **Kennon Payroll** then go to the **General** tab then press **Edit**
+5. Change the **Application Label** to **Kennon Payroll Portal** then **Save**
+
+# Image 50
+
+6. Open the **Assignments** tab then open the **Assign** dropdown and select **Assign to People**
+7. Confirm that Taylor can add assignments to people then close out of that menu
+
+# Image 51
+
+### Test Taylor's Limits
+
+1. Open the **Directory** dropdown then **People**
+2. Confirm that no option to create users appears
+
+# Image 52
+
+3. **Sign Out** of Taylor Reed's profile
+
+### Verify in the System Log
+
+1. In the **Okta Administrator Console** open the **reports** dropdown the **System Log**
+2. In the **Search** function enter the following code:
+   `eventType sw "user.account.privilege" and target.alternateId eq "taylor.reed@kennon.tech"`
+
+# Image 53
+# Image 54
+
+3. In the **Search** function enter the following code:
+   `eventType eq "application.lifecycle.update" and actor.alternateId eq "taylor.reed@kennon.tech"`
+
+# Image 55
+# Image 56
 
 
 
