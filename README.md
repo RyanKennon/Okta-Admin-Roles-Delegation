@@ -385,9 +385,103 @@
 # Image 55
 # Image 56
 
+## 6) Assign Roles Through a Group
+
+### Remove Riley Carter's Direct Role
+
+1. In the **Okta Administrator Console** open the **Security** dropdown then **Administrators**
+2. Open the **Admins** tab then to the right of **Riley Carter** open the **Edit** dropdown then select **Edit Assignments**
+3. Press the **Trashcan** next to the **Help Desk Administrator** role then **Save Changes**
+
+# Image 57
+
+### Create the Admin Group
+
+1. Open the **Directory** dropdown then **Groups** then press **Add Group**
+2. Create a group with the following information then **Save:**
+
+   - **Name:** Kennon Help Desk Admins
+   - **Description:** Members receive the Help Desk Administrator role
+
+# Image 58
+
+### Assign the Role to a Group
+
+1. Open the **Security** dropdown then **Adminstrators**
+2. Open the **Admins** tab and press **Add Administrator**
+3. Create an administrator with the following information then **Save Changes:**
+
+   - **Admin Group:** Kennon Help Desk Admins
+   - **Role:** Help Desk Administrator
+   - **Groups:** Kennon Finance
+
+# Image 59
+
+### Add Riley Carter to the Group and Test
+
+1. Open the **Directory** dropdown then **Groups** then select **Kennon Help Desk Admins**
+2. Press **Assign People** then press the **+* next to **Riley Carter** then press **Done**
+
+# Image 60
+
+3. Log in to **Okta** as **Riley Carter** in an **incognito** browser
+4. Open the **Directory** dropdown then select **People** then open **Avery Brooks** profile
+5. Press **Resend Password Email**
+
+# Image 61
+
+6. **Sign Out** of Riley Carter's account
 
 
+### Remove Riley from the Group
 
+1. In the **Okta Administrator Console** open the **Securty** dropdown then **Administrators**
+2. Open the **Admins** tab then under **View by Assignee** select **Groups** then open the **Kennon Help Desk Admins** group
+3. Open the **People** tab then next to **Riley Carter** press the **X**
+
+## Image 68
+
+### Verify in the System Log
+
+1. Open the **Reports** dropdown then select **System Log**
+2. In the **Search** function enter the following code:
+   `eventType eq "group.privilege.grant"`
+
+# Image 62
+# Image 63
+
+3. In the **Search** function enter the following code:
+   `eventType sw "group.user_membership" and target.alternateId eq "riley.carter@kennon.tech"`
+
+# Image 64
+# Image 65
+
+4. In the **Search** function enter the following code:
+   `eventType eq "user.account.reset_password" and actor.alternateId eq "riley.carter@kennon.tech"`
+
+## Image 66
+## Image 67
+
+---
+
+## 7) Test Matrix Summary
+
+The table below combines every admin assignment tested in this lab, showing what each test admin could and couldn't do.
+
+| Admin | Role | Scope | Could Do | Could Not Do |
+|---|---|---|---|---|
+| Sam Patel | Read Only Administrator | All users and groups | View users, groups and policies | Change any setting or user |
+| Riley Carter | Help Desk Administrator | All users and groups | Reset passwords for Avery and Casey | Add, deactivate or delete users |
+| Riley Carter | Help Desk Administrator | Kennon Finance | Reset Avery's password | Manage Casey |
+| Sam Patel | Kennon Password Reset (custom) | Kennon Sales users | Reset Casey's password | See Avery, edit or deactivate users |
+| Taylor Reed | Application Administrator | Kennon Payroll | Edit the Kennon Payroll app | See Kennon CRM or security settings |
+| Riley Carter | Help Desk Administrator through Kennon Help Desk Admins | Kennon Finance | Reset Avery's password while in the group | Access the Admin Console after removal |
+
+Each admin could only act within their role and scope, showing how Okta enforces least privilege through roles, resource sets and group based assignment.
+
+---
+
+## 8) Cleanup
 
 
 
