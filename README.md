@@ -1,6 +1,69 @@
-# Okta-Admin-Roles-Delegation
+# Header
+<p align="center">
+  
+</p>
+
+# Okta Admin Roles and Delegation
+
+This lab delegates admin access in Okta for the fictional company Kennon Technologies. It covers standard admin roles, scoping a role to a single group, building a custom role with a resource set, limiting an app administrator to one app, and assigning roles through a group. Each assignment is tested by signing in as the test admin and confirming what they can and can't do.
+
+---
+
+## Skills Demonstrated
+
+- Assigning standard admin roles such as Read Only, Help Desk and Application Administrator
+- Scoping admin roles to specific groups and apps
+- Building custom admin roles with only the permissions needed
+- Creating resource sets to limit which users a custom role can manage
+- Assigning admin roles through group membership
+- Applying least privilege to admin access
+- Verifying role grants, revocations and delegated actions in the System Log
+
+---
+
+## Prerequisites
+
+- An Okta Integrator Free Plan org (Identity Engine) with Super Administrator access
+- Okta Verify installed on a phone
+- An email inbox you control for the test users' primary emails
+- A second browser session signed in as your admin account while assigning roles
+
+---
+
+## Environment
+
+| Component | Details |
+|---|---|
+| Identity Platform | Okta Integrator Free Plan (Identity Engine) |
+| Company | Kennon Technologies (kennon.tech) |
+| Test Admins | Riley Carter, Sam Patel, Taylor Reed |
+| Managed Users | Avery Brooks (Finance), Casey Nguyen (Sales) |
+| Groups | Kennon Finance, Kennon Sales, Kennon Help Desk Admins |
+| Test Apps | Kennon Payroll, Kennon CRM (Bookmark Apps) |
+| Custom Admin Objects | Kennon Password Reset (role), Kennon Sales Resources (resource set) |
+| MFA | Okta Verify |
+
+> **Note:** Real IP addresses and email addresses are blurred in screenshots. Bookmark apps appear as **Bookmark App** in the System Log.
+
+---
+
+## Table of Contents
+
+1. [Prepare Users and Groups](#1-prepare-users-and-groups)
+2. [Standard Admin Roles](#2-standard-admin-roles)
+3. [Scoped Delegation with a Standard Role](#3-scoped-delegation-with-a-standard-role)
+4. [Custom Admin Role and Resource Set](#4-custom-admin-role-and-resource-set)
+5. [App Administrator Scope to One App](#5-app-administrator-scope-to-one-app)
+6. [Assign Roles Through a Group](#6-assign-roles-through-a-group)
+7. [Test Matrix Summary](#7-test-matrix-summary)
+8. [Cleanup](#8-cleanup)
+9. [Closing Note](#closing-note)
+
+---
 
 ## 1) Prepare Users and Groups
+
+This phase creates the groups and users that delegated admins will manage, along with three test admins who receive roles in later phases. Each test admin enrolls in Okta Verify, since the Okta Admin Console requires MFA.
 
 ### Create Target Groups
 
@@ -111,14 +174,20 @@
 ### Verify in the System Log
 
 1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
-2. In the **Search** bar use the following function:
-   `eventType eq "user.lifecycle.create"`
+2. Search for user creation events to confirm all five users were created:
+   ```text
+   eventType eq "user.lifecycle.create"
+   ```
+   **Create okta user** events appear for **Avery Brooks**, **Casey Nguyen**, **Riley Carter**, **Sam Patel** and **Taylor Reed**, with your admin account as the actor
 
 # Image 13
 # Image 14
 
-3. In the **Search** bar use the following function:
-   `eventType eq "user.mfa.factor.activate"`
+3. Search for authenticator activations to confirm the test admins enrolled Okta Verify:
+   ```text
+   eventType eq "user.mfa.factor.activate"
+   ```
+   Three **Activate factor for user** events appear for each test admin with **Okta Verify** as the target, one for each verification method enrolled with the app
 
 # Image 15
 # Image 16
@@ -126,6 +195,8 @@
 ---
 
 ## 2) Standard Admin Roles
+
+This phase assigns two standard admin roles and compares what each test admin can see and change. Read Only Administrator can view the org but not change it, while Help Desk Administrator can only handle support tasks like password resets.
 
 ### Assign Read Only Administrator to Sam Patel
 
@@ -173,17 +244,23 @@
 
 5. Sign out of Riley Carter's account
 
-### Verify in the System Logs
+### Verify in the System Log
 
-1. In the **Okta Administrator Console** open the **Reports** dropdown  then **System Log**
-2. In the **Search** function enter the following code:
-   `eventType eq "user.account.privilege.grant"`
+1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
+2. Search for admin role grants to confirm both standard roles were assigned:
+   ```text
+   eventType eq "user.account.privilege.grant"
+   ```
+   **Grant user privilege** events appear for **Sam Patel** and **Riley Carter**, with your admin account as the actor and **Role Assigned** as a target
 
 # Image 23
 # Image 24
 
-3. In the **Search** function enter the following code:
-   `eventType eq "user.account.reset_password" and actor.alternateId eq "riley.carter@kennon.tech"`
+3. Search for password resets started by Riley Carter to confirm the delegated action:
+   ```text
+   eventType eq "user.account.reset_password" and actor.alternateId eq "riley.carter@kennon.tech"
+   ```
+   The password reset event appears with **Riley Carter** as the actor and **Avery Brooks** as the target, showing delegated actions are logged under the admin who performed them
 
 # Image 25
 # Image 26
@@ -191,6 +268,8 @@
 ---
 
 ## 3) Scoped Delegation with a Standard Role
+
+This phase limits Riley's Help Desk Administrator role from every user to only the Kennon Finance group. Riley keeps the same permissions but can only use them on Finance users.
 
 ### Scope Riley Carter to Kennon Finance
 
@@ -214,19 +293,27 @@
 ### Verify in the System Log
 
 1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
-2. In the **Search** function enter the following code:
-   `eventType sw "user.account.privilege" and target.alternateId eq "riley.carter@kennon.tech"`
+2. Search for privilege changes on Riley Carter to confirm the role was scoped:
+   ```text
+   eventType sw "user.account.privilege" and target.alternateId eq "riley.carter@kennon.tech"
+   ```
+   A **Grant user privilege** event appears with **Target assigned to Role** as a target, showing the Help Desk Administrator role was limited to **Kennon Finance**
 
 # Image 29
 # Image 30
 
-3. In the **Search** function enter the following code:
-   `eventType eq "user.account.reset_password" and actor.alternateId eq "riley.carter@kennon.tech"`
+3. Search for password resets started by Riley Carter to confirm Riley can still act inside the scope:
+   ```text
+   eventType eq "user.account.reset_password" and actor.alternateId eq "riley.carter@kennon.tech"
+   ```
+   A new reset event appears for **Avery Brooks** after the scope change, and no reset events appear for **Casey Nguyen**
 
 # Image 31
 # Image 32
 
 ## 4) Custom Admin Role and Resource Set
+
+This phase builds a custom admin role with only password reset permissions and limits it to Kennon Sales users with a resource set. The custom role defines what an admin can do, and the resource set defines who they can do it to.
 
 ### Remove Sam's Read Only Role
 
@@ -284,34 +371,48 @@
 # Image 37
 
 
-### Verify in the System Logs
+### Verify in the System Log
 
 1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
-2. In the **Search** function enter the following code:
-   `eventType eq "iam.role.create"`
+2. Search for role creation events to confirm the custom role was created:
+   ```text
+   eventType eq "iam.role.create"
+   ```
+   The **Role created** event appears with your admin account as the actor, **Kennon Password Reset** as the target, and the role's permissions listed as additional targets
 
 # Image 38
 # Image 39
 
-3. In the **Search** function enter the following code:
-   `eventType eq "iam.resourceset.create"`
+3. Search for resource set creation events to confirm the resource set was created:
+   ```text
+   eventType eq "iam.resourceset.create"
+   ```
+   The **Resource set created** event appears with **Kennon Sales Resources** and **Kennon Sales** as targets
 
 # Image 40
 # Image 41
 
-4. In the **Search** function enter the following code:
-   `eventType sw "user.account.privilege" and target.alternateId eq "sam.patel@kennon.tech"`
+4. Search for privilege changes on Sam Patel to confirm the role swap:
+   ```text
+   eventType sw "user.account.privilege" and target.alternateId eq "sam.patel@kennon.tech"
+   ```
+   A **Revoke user privilege** event removes the Read Only Administrator role, and a **Grant user privilege** event adds the custom role binding for **Kennon Password Reset**
 
 # Image 42
 # Image 43
 
-5. In the **Search** function enter the following code:
-   `eventType eq "user.account.reset_password" and actor.alternateId eq "sam.patel@kennon.tech"`
+5. Search for password resets started by Sam Patel to confirm the custom role works inside its scope:
+   ```text
+   eventType eq "user.account.reset_password" and actor.alternateId eq "sam.patel@kennon.tech"
+   ```
+   The reset event appears with **Sam Patel** as the actor and **Casey Nguyen** as the target
 
 # Image 44
 # Image 45
 
 ## 5) App Administrator Scope to One App
+
+This phase gives Taylor the Application Administrator role limited to a single app. Taylor can manage that app without seeing other apps or managing users.
 
 ### Create Two Test Apps
 
@@ -372,20 +473,28 @@
 
 ### Verify in the System Log
 
-1. In the **Okta Administrator Console** open the **reports** dropdown the **System Log**
-2. In the **Search** function enter the following code:
-   `eventType sw "user.account.privilege" and target.alternateId eq "taylor.reed@kennon.tech"`
+1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
+2. Search for privilege changes on Taylor Reed to confirm the scoped app role:
+   ```text
+   eventType sw "user.account.privilege" and target.alternateId eq "taylor.reed@kennon.tech"
+   ```
+   Two **Grant user privilege** events appear at the same time, one with **Role Assigned** for the Application Administrator role and one with **Target assigned to Role** limiting it to **Kennon Payroll**
 
 # Image 53
 # Image 54
 
-3. In the **Search** function enter the following code:
-   `eventType eq "application.lifecycle.update" and actor.alternateId eq "taylor.reed@kennon.tech"`
+3. Search for app updates made by Taylor Reed to confirm Taylor could edit the scoped app:
+   ```text
+   eventType eq "application.lifecycle.update" and actor.alternateId eq "taylor.reed@kennon.tech"
+   ```
+   **Update application** events appear with **Taylor Reed** as the actor and **Bookmark App** as the target, from the label change to **Kennon Payroll Portal**
 
 # Image 55
 # Image 56
 
 ## 6) Assign Roles Through a Group
+
+This phase assigns the Help Desk Administrator role to a group instead of a person, then grants and removes Riley's admin access only by changing group membership.
 
 ### Remove Riley Carter's Direct Role
 
@@ -432,7 +541,6 @@
 
 6. **Sign Out** of Riley Carter's account
 
-
 ### Remove Riley from the Group
 
 1. In the **Okta Administrator Console** open the **Securty** dropdown then **Administrators**
@@ -444,23 +552,32 @@
 ### Verify in the System Log
 
 1. Open the **Reports** dropdown then select **System Log**
-2. In the **Search** function enter the following code:
-   `eventType eq "group.privilege.grant"`
+2. Search for group privilege grants to confirm the role was assigned to the group:
+   ```text
+   eventType eq "group.privilege.grant"
+   ```
+   Two **Grant group privilege** events appear at the same time for **Kennon Help Desk Admins**, one assigning the Help Desk Administrator role and one limiting it to **Kennon Finance**
 
 # Image 62
 # Image 63
 
-3. In the **Search** function enter the following code:
-   `eventType sw "group.user_membership" and target.alternateId eq "riley.carter@kennon.tech"`
+3. Search for group membership changes on Riley Carter to confirm Riley was added and removed:
+   ```text
+   eventType sw "group.user_membership" and target.alternateId eq "riley.carter@kennon.tech"
+   ```
+   An add event and a remove event appear for **Kennon Help Desk Admins**, with your admin account as the actor
 
 # Image 64
 # Image 65
 
-4. In the **Search** function enter the following code:
-   `eventType eq "user.account.reset_password" and actor.alternateId eq "riley.carter@kennon.tech"`
+4. Search for password resets started by Riley Carter to confirm the group role worked:
+   ```text
+   eventType eq "user.account.reset_password" and actor.alternateId eq "riley.carter@kennon.tech"
+   ```
+   A reset event for **Avery Brooks** appears from while Riley's admin access came only from the group
 
-## Image 66
-## Image 67
+# Image 66
+# Image 67
 
 ---
 
@@ -482,6 +599,8 @@ Each admin could only act within their role and scope, showing how Okta enforces
 ---
 
 ## 8) Cleanup
+
+This phase removes every object created in the lab in reverse order of creation, since Okta won't delete a role, resource set or app while it's still assigned.
 
 ### Remove the Group Role Assignment
 
@@ -556,49 +675,51 @@ Each admin could only act within their role and scope, showing how Okta enforces
 
 # Image 81
 
-### Verify in the System Logs
+### Verify in the System Log
 
 1. Open the **Reports** dropdown then select **System Log**
-2. In the **Search** function enter the following code:
-   `eventType sw "user.account.privilege.revoke"`
+2. Search for privilege revocations to confirm the admin roles were removed:
+   ```text
+   eventType sw "user.account.privilege.revoke"
+   ```
+   **Revoke user privilege** events appear for **Sam Patel**, with your admin account as the actor, and **Taylor Reed**, with **Okta System** as the actor because deleting the only app in Taylor's scope revoked the role automatically
 
 # Image 82
 # Image 83
 
-3. In the **Search** function enter the following code:
-   `eventType eq "iam.role.delete"`
+3. Search for role deletions to confirm the custom role was removed:
+   ```text
+   eventType eq "iam.role.delete"
+   ```
+   The delete event appears with **Kennon Password Reset** as the target
 
 # Image 84
 # Image 85
 
-4. In the **Search** function enter the following code:
-   `eventType eq "iam.resourceset.delete"`
+4. Search for resource set deletions to confirm the resource set was removed:
+   ```text
+   eventType eq "iam.resourceset.delete"
+   ```
+   The delete event appears with **Kennon Sales Resources** as the target
 
 # Image 86
 # Image 87
 
-5. In the **Search** function enter the following code:
-   `eventType eq "application.lifecycle.delete"`
+5. Search for application deletions to confirm both test apps were removed:
+   ```text
+   eventType eq "application.lifecycle.delete"
+   ```
+   Delete events appear for **Kennon Payroll Portal** and **Kennon CRM**, both shown as **Bookmark App**
 
 # Image 88
 # Image 89
 
-6. In the **Search** function enter the following code:
-   `eventType eq "user.lifecycle.delete.completed"`
+6. Search for completed user deletions to confirm
 
-# Image 90
-# Image 91
+---
 
-7. In the **Search** function enter the following code:
-   `eventType eq "group.lifecycle.delete"`
+## Closing Note
 
-# Image 92
-# Image 93
+This lab delegated admin access for Kennon Technologies using standard roles, group scoping, a custom role with a resource set, a single app administrator, and group based role assignment. Each test admin could only act within their role and scope, so a help desk admin limited to Finance couldn't touch Sales, and an app admin couldn't see other apps or manage users.
 
-
-
-
-
-
-
-
+The lab also showed a few behaviors worth remembering. A custom role with only user permissions needs the resource set to contain users, not just the group, before it can manage that group's members. Removing a user from an admin group removes their admin access right away. Deleting the only app in an Application Administrator's scope makes Okta System revoke the role automatically. Together, these show how roles, scopes and groups combine to keep admin access at least privilege.
