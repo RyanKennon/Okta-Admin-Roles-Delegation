@@ -102,7 +102,7 @@ This phase creates the groups and users that delegated admins will manage, along
    - **User Must Change Password on First Login:** Uncheck
 
 <p align="center">
-  <img src="Images/Image%204.png" alt="Image 4">
+  <img src="Images/image%204.png" alt="Image 4">
 </p>
 
 3. Create the second user with the following information then **Save:**
