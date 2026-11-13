@@ -117,7 +117,7 @@ This phase creates the groups and users that delegated admins will manage, along
    - **User Must Change Password on First Login:** Uncheck
 
 <p align="center">
-  <img src="Images/Image%205.png" alt="Image 5">
+  <img src="Images/image%205.png" alt="Image 5">
 </p>
 
 ### Create Test Admins
@@ -134,7 +134,7 @@ This phase creates the groups and users that delegated admins will manage, along
    - **User Must Change Password on First Login:** Uncheck
 
 <p align="center">
-  <img src="Images/Image%206.png" alt="Image 6">
+  <img src="Images/image%206.png" alt="Image 6">
 </p>
 
 2. Create the second admin with the following information then **Save and Add Another:**
@@ -149,7 +149,7 @@ This phase creates the groups and users that delegated admins will manage, along
    - **User Must Change Password on First Login:** Uncheck
 
 <p align="center">
-  <img src="Images/Image%207.png" alt="Image 7">
+  <img src="Images/image%207.png" alt="Image 7">
 </p>
 
 3. Create the third admin with the following information then **Save:**
@@ -164,7 +164,7 @@ This phase creates the groups and users that delegated admins will manage, along
    - **User Must Change Password on First Login:** Uncheck
 
 <p align="center">
-  <img src="Images/Image%208.png" alt="Image 8">
+  <img src="Images/image%208.png" alt="Image 8">
   <img src="Images/Image%209.png" alt="Image 9">
 </p>
 
