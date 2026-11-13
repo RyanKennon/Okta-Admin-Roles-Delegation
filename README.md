@@ -1,6 +1,6 @@
 # Header
 <p align="center">
-  
+  <img src="Images/Header.png" alt="Okta Admin Roles and Delegation">
 </p>
 
 # Okta Admin Roles and Delegation
@@ -72,16 +72,20 @@ This phase creates the groups and users that delegated admins will manage, along
 
    - **Name:** Kennon Finance
    - **Description:** Finance users managed by delegated admins
-  
-# Image 1
+
+<p align="center">
+  <img src="Images/Image%201.PNG" alt="Image 1">
+</p>
 
 3. Press **Add Group** again then create the second group with the following information then **Save:**
 
    - **Name:** Kennon Sales
    - **Description:** Sales users managed by delegated admins
   
-# Image 2
-# Image 3
+<p align="center">
+  <img src="Images/Image%202.PNG" alt="Image 2">
+  <img src="Images/Image%203.PNG" alt="Image 3">
+</p>
 
 ### Create Test Users
 
@@ -96,8 +100,10 @@ This phase creates the groups and users that delegated admins will manage, along
    - **Activation:** Activate Now
    - **I Will Set Password:** Check
    - **User Must Change Password on First Login:** Uncheck
-  
-# Image 4
+
+<p align="center">
+  <img src="Images/Image%204.PNG" alt="Image 4">
+</p>
 
 3. Create the second user with the following information then **Save:**
 
@@ -110,7 +116,9 @@ This phase creates the groups and users that delegated admins will manage, along
    - **I Will Set Password:** Check
    - **User Must Change Password on First Login:** Uncheck
 
-# Image 5
+<p align="center">
+  <img src="Images/Image%205.PNG" alt="Image 5">
+</p>
 
 ### Create Test Admins
 
@@ -125,7 +133,9 @@ This phase creates the groups and users that delegated admins will manage, along
    - **I Will Set Password:** Check
    - **User Must Change Password on First Login:** Uncheck
 
-# Image 6
+<p align="center">
+  <img src="Images/Image%206.PNG" alt="Image 6">
+</p>
 
 2. Create the second admin with the following information then **Save and Add Another:**
 
@@ -138,7 +148,9 @@ This phase creates the groups and users that delegated admins will manage, along
    - **I Will Set Password:** Check
    - **User Must Change Password on First Login:** Uncheck
 
-# Image 7
+<p align="center">
+  <img src="Images/Image%207.PNG" alt="Image 7">
+</p>
 
 3. Create the third admin with the following information then **Save:**
 
@@ -151,25 +163,33 @@ This phase creates the groups and users that delegated admins will manage, along
    - **I Will Set Password:** Check
    - **User Must Change Password on First Login:** Uncheck
 
-# Image 8
-# Image 9
+<p align="center">
+  <img src="Images/Image%208.PNG" alt="Image 8">
+  <img src="Images/Image%209.PNG" alt="Image 9">
+</p>
 
 ### Enroll Okta Verify for the Test Admins
 
 1. Log in to **Okta** as **Riley Carter** using an **incognito** browser
 2. Set up **Okta Verify** then **Sign Out**
 
-# Image 10
+<p align="center">
+  <img src="Images/Image%2010.PNG" alt="Image 10">
+</p>
 
 3. Log in to **Okta** as **Sam Patel** using an **incognito** browser
 4. Set up **Okta Verify** then **Sign Out**
 
-# Image 11
+<p align="center">
+  <img src="Images/Image%2011.PNG" alt="Image 11">
+</p>
 
 5. Log in to **Okta** as **Taylor Reed** using an **incognito** browser
 6. Set up **Okta Verify** then **Sign Out**
 
-# Image 12
+<p align="center">
+  <img src="Images/Image%2012.PNG" alt="Image 12">
+</p>
 
 ### Verify in the System Log
 
@@ -180,8 +200,10 @@ This phase creates the groups and users that delegated admins will manage, along
    ```
    **Create okta user** events appear for **Avery Brooks**, **Casey Nguyen**, **Riley Carter**, **Sam Patel** and **Taylor Reed**, with your admin account as the actor
 
-# Image 13
-# Image 14
+<p align="center">
+  <img src="Images/Image%2013.PNG" alt="Image 13">
+  <img src="Images/Image%2014.PNG" alt="Image 14">
+</p>
 
 3. Search for authenticator activations to confirm the test admins enrolled Okta Verify:
    ```text
@@ -189,8 +211,10 @@ This phase creates the groups and users that delegated admins will manage, along
    ```
    Three **Activate factor for user** events appear for each test admin with **Okta Verify** as the target, one for each verification method enrolled with the app
 
-# Image 15
-# Image 16
+<p align="center">
+  <img src="Images/Image%2015.PNG" alt="Image 15">
+  <img src="Images/Image%2016.PNG" alt="Image 16">
+</p>
 
 ---
 
@@ -204,15 +228,18 @@ This phase assigns two standard admin roles and compares what each test admin ca
 2. Press **Add Administrator** under **Select Admin** choose **Sam Patel**
 3. Under **Role** choose **Read-Only Administrator** then **Save Changes**
 
-
-# Image 17
+<p align="center">
+  <img src="Images/Image%2017.PNG" alt="Image 17">
+</p>
 
 ### Assign Help Desk Administrator to Riley Carter
 
 1. Select **Add Administrator** again then under **Select Admin** choose **Riley Carter**
 2. Under **Role** choose **Help Desk Administrator** then **Save Changes**
 
-# Image 18
+<p align="center">
+  <img src="Images/Image%2018.PNG" alt="Image 18">
+</p>
 
 ### Test Read Only Administrator as Sam Patel
 
@@ -220,13 +247,17 @@ This phase assigns two standard admin roles and compares what each test admin ca
 2. Open the Directory** dropdown then **People** then open **Avery Brooks's** profile
 3. Confirm there is no ability to change the account such as; **Reset Password, Deactivate, or Edit Profile**
 
-# Image 19
+<p align="center">
+  <img src="Images/Image%2019.PNG" alt="Image 19">
+</p>
 
 4. Open the **Security** dropdown then **Authentication Policies**
 5. Choose **App Sign-In** then open **Okta Dashboard**
 6. Confirm there is no option to edit the policy or add rules to the policy
 
-# Image 20
+<p align="center">
+  <img src="Images/Image%2020.PNG" alt="Image 20">
+</p>
 
 7. Sign out of Sam Patel's account
 
@@ -236,11 +267,15 @@ This phase assigns two standard admin roles and compares what each test admin ca
 2. Open the Directory** dropdown then **People** then open **Avery Brooks's** profile
 3. Confirm there is an ability to **Reset or Remove Password** and to **Reset Authenticators** but no **Deactivate** account option
 
-# Image 21
+<p align="center">
+  <img src="Images/Image%2021.PNG" alt="Image 21">
+</p>
 
 4. Select **Reset Password** then **Send a Reset Password Email**
 
-# Image 22
+<p align="center">
+  <img src="Images/Image%2022.PNG" alt="Image 22">
+</p>
 
 5. Sign out of Riley Carter's account
 
@@ -253,8 +288,10 @@ This phase assigns two standard admin roles and compares what each test admin ca
    ```
    **Grant user privilege** events appear for **Sam Patel** and **Riley Carter**, with your admin account as the actor and **Role Assigned** as a target
 
-# Image 23
-# Image 24
+<p align="center">
+  <img src="Images/Image%2023.PNG" alt="Image 23">
+  <img src="Images/Image%2024.PNG" alt="Image 24">
+</p>
 
 3. Search for password resets started by Riley Carter to confirm the delegated action:
    ```text
@@ -262,8 +299,10 @@ This phase assigns two standard admin roles and compares what each test admin ca
    ```
    The password reset event appears with **Riley Carter** as the actor and **Avery Brooks** as the target, showing delegated actions are logged under the admin who performed them
 
-# Image 25
-# Image 26
+<p align="center">
+  <img src="Images/Image%2025.PNG" alt="Image 25">
+  <img src="Images/Image%2026.PNG" alt="Image 26">
+</p>
 
 ---
 
@@ -279,7 +318,9 @@ This phase limits Riley's Help Desk Administrator role from every user to only t
 4. Uncheck the box labeled **Constrain this Role to the Entire Organization**
 5. In the **Search by Groups** box search **Kennon Finance** then select **Add** then **Confirm**
 
-# Image 27
+<p align="center">
+  <img src="Images/Image%2027.PNG" alt="Image 27">
+</p>
 
 ### Test Riley on a Finance User
 
@@ -288,7 +329,9 @@ This phase limits Riley's Help Desk Administrator role from every user to only t
 3. Open the **More Actions** dropdown and confirm **Reset Authenticators** appears
 4. Press **Resend Password Email** then **Reset Password** then **Sign Out**
 
-# Image 28
+<p align="center">
+  <img src="Images/Image%2028.PNG" alt="Image 28">
+</p>
 
 ### Verify in the System Log
 
@@ -299,8 +342,10 @@ This phase limits Riley's Help Desk Administrator role from every user to only t
    ```
    A **Grant user privilege** event appears with **Target assigned to Role** as a target, showing the Help Desk Administrator role was limited to **Kennon Finance**
 
-# Image 29
-# Image 30
+<p align="center">
+  <img src="Images/Image%2029.PNG" alt="Image 29">
+  <img src="Images/Image%2030.PNG" alt="Image 30">
+</p>
 
 3. Search for password resets started by Riley Carter to confirm Riley can still act inside the scope:
    ```text
@@ -308,8 +353,10 @@ This phase limits Riley's Help Desk Administrator role from every user to only t
    ```
    A new reset event appears for **Avery Brooks** after the scope change, and no reset events appear for **Casey Nguyen**
 
-# Image 31
-# Image 32
+<p align="center">
+  <img src="Images/Image%2031.PNG" alt="Image 31">
+  <img src="Images/Image%2032.PNG" alt="Image 32">
+</p>
 
 ## 4) Custom Admin Role and Resource Set
 
@@ -321,7 +368,9 @@ This phase builds a custom admin role with only password reset permissions and l
 2. Open the **Admins** tab then next to **Sam Patel** open the **Edit** dropdown then select **Edit Assignments**
 3. Next to the **Read-Only Administrator** role press the **Trashcan** then **Save Changes**
 
-# Image 33
+<p align="center">
+  <img src="Images/Image%2033.PNG" alt="Image 33">
+</p>
 
 ### Create the Custom Role
 
@@ -336,7 +385,9 @@ This phase builds a custom admin role with only password reset permissions and l
    - **Reset Users' Passwords:** Check
    - **Unlock Users:** Check
 
-# Image 34
+<p align="center">
+  <img src="Images/Image%2034.PNG" alt="Image 34">
+</p>
 
 ### Create the Resource Set
 
@@ -349,7 +400,9 @@ This phase builds a custom admin role with only password reset permissions and l
    - **Resources**
    - **Users:** Kennon Sales
 
-# Image 35
+<p align="center">
+  <img src="Images/Image%2035.PNG" alt="Image 35">
+</p>
 
 ### Assign Custom Role to Sam Patel
 
@@ -360,7 +413,9 @@ This phase builds a custom admin role with only password reset permissions and l
    - **Role:** Kennon Password Reset
    - **Resource Set:** Kennon Sales Resources
 
-# Image 36
+<p align="center">
+  <img src="Images/Image%2036.PNG" alt="Image 36">
+</p>
 
 ### Test Sam Patel on a Sales User
 
@@ -368,7 +423,9 @@ This phase builds a custom admin role with only password reset permissions and l
 2. Open the **Directory** dropdown then select **People** then open **Casey Nguyen's** profile
 3. Press **Reset or Remove Password** then **Sign Out**
 
-# Image 37
+<p align="center">
+  <img src="Images/Image%2037.PNG" alt="Image 37">
+</p>
 
 
 ### Verify in the System Log
@@ -380,8 +437,10 @@ This phase builds a custom admin role with only password reset permissions and l
    ```
    The **Role created** event appears with your admin account as the actor, **Kennon Password Reset** as the target, and the role's permissions listed as additional targets
 
-# Image 38
-# Image 39
+<p align="center">
+  <img src="Images/Image%2038.PNG" alt="Image 38">
+  <img src="Images/Image%2039.PNG" alt="Image 39">
+</p>
 
 3. Search for resource set creation events to confirm the resource set was created:
    ```text
@@ -389,8 +448,10 @@ This phase builds a custom admin role with only password reset permissions and l
    ```
    The **Resource set created** event appears with **Kennon Sales Resources** and **Kennon Sales** as targets
 
-# Image 40
-# Image 41
+<p align="center">
+  <img src="Images/Image%2040.PNG" alt="Image 40">
+  <img src="Images/Image%2041.PNG" alt="Image 41">
+</p>
 
 4. Search for privilege changes on Sam Patel to confirm the role swap:
    ```text
@@ -398,8 +459,10 @@ This phase builds a custom admin role with only password reset permissions and l
    ```
    A **Revoke user privilege** event removes the Read Only Administrator role, and a **Grant user privilege** event adds the custom role binding for **Kennon Password Reset**
 
-# Image 42
-# Image 43
+<p align="center">
+  <img src="Images/Image%2042.PNG" alt="Image 42">
+  <img src="Images/Image%2043.PNG" alt="Image 43">
+</p>
 
 5. Search for password resets started by Sam Patel to confirm the custom role works inside its scope:
    ```text
@@ -407,8 +470,10 @@ This phase builds a custom admin role with only password reset permissions and l
    ```
    The reset event appears with **Sam Patel** as the actor and **Casey Nguyen** as the target
 
-# Image 44
-# Image 45
+<p align="center">
+  <img src="Images/Image%2044.PNG" alt="Image 44">
+  <img src="Images/Image%2045.PNG" alt="Image 45">
+</p>
 
 ## 5) App Administrator Scope to One App
 
@@ -423,7 +488,9 @@ This phase gives Taylor the Application Administrator role limited to a single a
    - **Application Label:** Kennon Payroll
    - **URL:** https://example.com
 
-# Image 46
+<p align="center">
+  <img src="Images/Image%2046.PNG" alt="Image 46">
+</p>
 
 4. Press **Back to Applications** then **Browse App Catalog** and search **Bookmark App** then **Add Integration**
 5. Create the second app with the following information then **Done:**
@@ -431,7 +498,9 @@ This phase gives Taylor the Application Administrator role limited to a single a
    - **Application Label:** Kennon CRM
    - **URL:** https://example.org
 
-# Image 47
+<p align="center">
+  <img src="Images/Image%2047.PNG" alt="Image 47">
+</p>
 
 ### Assign Application Administrator to Taylor
 
@@ -442,7 +511,9 @@ This phase gives Taylor the Application Administrator role limited to a single a
    - **Role:** Application Administrator
    - **Applications:** Kennon Payroll
 
-# Image 48
+<p align="center">
+  <img src="Images/Image%2048.PNG" alt="Image 48">
+</p>
 
 ### Test Taylor on the Scoped App
 
@@ -450,24 +521,32 @@ This phase gives Taylor the Application Administrator role limited to a single a
 2. Open the **Applications and Resources** dropdown then select **Applications**
 3. Confirm that **Kennon Payroll** appears and the **Kennon CRM** doesn't appear
 
-# Image 49
+<p align="center">
+  <img src="Images/Image%2049.PNG" alt="Image 49">
+</p>
 
 4. Open **Kennon Payroll** then go to the **General** tab then press **Edit**
 5. Change the **Application Label** to **Kennon Payroll Portal** then **Save**
 
-# Image 50
+<p align="center">
+  <img src="Images/Image%2050.PNG" alt="Image 50">
+</p>
 
 6. Open the **Assignments** tab then open the **Assign** dropdown and select **Assign to People**
 7. Confirm that Taylor can add assignments to people then close out of that menu
 
-# Image 51
+<p align="center">
+  <img src="Images/Image%2051.PNG" alt="Image 51">
+</p>
 
 ### Test Taylor's Limits
 
 1. Open the **Directory** dropdown then **People**
 2. Confirm that no option to create users appears
 
-# Image 52
+<p align="center">
+  <img src="Images/Image%2052.PNG" alt="Image 52">
+</p>
 
 3. **Sign Out** of Taylor Reed's profile
 
@@ -480,8 +559,10 @@ This phase gives Taylor the Application Administrator role limited to a single a
    ```
    Two **Grant user privilege** events appear at the same time, one with **Role Assigned** for the Application Administrator role and one with **Target assigned to Role** limiting it to **Kennon Payroll**
 
-# Image 53
-# Image 54
+<p align="center">
+  <img src="Images/Image%2053.PNG" alt="Image 53">
+  <img src="Images/Image%2054.PNG" alt="Image 54">
+</p>
 
 3. Search for app updates made by Taylor Reed to confirm Taylor could edit the scoped app:
    ```text
@@ -489,8 +570,10 @@ This phase gives Taylor the Application Administrator role limited to a single a
    ```
    **Update application** events appear with **Taylor Reed** as the actor and **Bookmark App** as the target, from the label change to **Kennon Payroll Portal**
 
-# Image 55
-# Image 56
+<p align="center">
+  <img src="Images/Image%2055.PNG" alt="Image 55">
+  <img src="Images/Image%2056.PNG" alt="Image 56">
+</p>
 
 ## 6) Assign Roles Through a Group
 
@@ -502,7 +585,9 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
 2. Open the **Admins** tab then to the right of **Riley Carter** open the **Edit** dropdown then select **Edit Assignments**
 3. Press the **Trashcan** next to the **Help Desk Administrator** role then **Save Changes**
 
-# Image 57
+<p align="center">
+  <img src="Images/Image%2057.PNG" alt="Image 57">
+</p>
 
 ### Create the Admin Group
 
@@ -512,7 +597,9 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
    - **Name:** Kennon Help Desk Admins
    - **Description:** Members receive the Help Desk Administrator role
 
-# Image 58
+<p align="center">
+  <img src="Images/Image%2058.PNG" alt="Image 58">
+</p>
 
 ### Assign the Role to a Group
 
@@ -524,20 +611,26 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
    - **Role:** Help Desk Administrator
    - **Groups:** Kennon Finance
 
-# Image 59
+<p align="center">
+  <img src="Images/Image%2059.PNG" alt="Image 59">
+</p>
 
 ### Add Riley Carter to the Group and Test
 
 1. Open the **Directory** dropdown then **Groups** then select **Kennon Help Desk Admins**
 2. Press **Assign People** then press the **+* next to **Riley Carter** then press **Done**
 
-# Image 60
+<p align="center">
+  <img src="Images/Image%2060.PNG" alt="Image 60">
+</p>
 
 3. Log in to **Okta** as **Riley Carter** in an **incognito** browser
 4. Open the **Directory** dropdown then select **People** then open **Avery Brooks** profile
 5. Press **Resend Password Email**
 
-# Image 61
+<p align="center">
+  <img src="Images/Image%2061.PNG" alt="Image 61">
+</p>
 
 6. **Sign Out** of Riley Carter's account
 
@@ -547,7 +640,9 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
 2. Open the **Admins** tab then under **View by Assignee** select **Groups** then open the **Kennon Help Desk Admins** group
 3. Open the **People** tab then next to **Riley Carter** press the **X**
 
-## Image 68
+<p align="center">
+  <img src="Images/Image%2068.PNG" alt="Image 68">
+</p>
 
 ### Verify in the System Log
 
@@ -558,8 +653,10 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
    ```
    Two **Grant group privilege** events appear at the same time for **Kennon Help Desk Admins**, one assigning the Help Desk Administrator role and one limiting it to **Kennon Finance**
 
-# Image 62
-# Image 63
+<p align="center">
+  <img src="Images/Image%2062.PNG" alt="Image 62">
+  <img src="Images/Image%2063.PNG" alt="Image 63">
+</p>
 
 3. Search for group membership changes on Riley Carter to confirm Riley was added and removed:
    ```text
@@ -567,8 +664,10 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
    ```
    An add event and a remove event appear for **Kennon Help Desk Admins**, with your admin account as the actor
 
-# Image 64
-# Image 65
+<p align="center">
+  <img src="Images/Image%2064.PNG" alt="Image 64">
+  <img src="Images/Image%2065.PNG" alt="Image 65">
+</p>
 
 4. Search for password resets started by Riley Carter to confirm the group role worked:
    ```text
@@ -576,8 +675,10 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
    ```
    A reset event for **Avery Brooks** appears from while Riley's admin access came only from the group
 
-# Image 66
-# Image 67
+<p align="center">
+  <img src="Images/Image%2066.PNG" alt="Image 66">
+  <img src="Images/Image%2067.PNG" alt="Image 67">
+</p>
 
 ---
 
@@ -608,72 +709,98 @@ This phase removes every object created in the lab in reverse order of creation,
 2. Open the **Admins** tab under **View by Assignee** select **Groups**
 3. To the right of **Kennon Help Desk Admins** open the **Edit** dropdown and select **Remove Assignments**
 
-# Image 69
+<p align="center">
+  <img src="Images/Image%2069.PNG" alt="Image 69">
+</p>
 
 4. Open the **Directory** dropdown then select **Groups** then open the **Kennon Help Desk Admins** group
 5. Open the **Actions** dropdown then select **Delete**
 
-# Image 79
+<p align="center">
+  <img src="Images/Image%2079.PNG" alt="Image 79">
+</p>
 
 ### Remove the App Administrator and Test Apps
 
 1. Under **View by Assignee** select **Users**
 2. To the right of **Taylor Reed** open the **Edit** dropdown and select **Remove Individual Assignments**
 
-# Image 70
+<p align="center">
+  <img src="Images/Image%2070.PNG" alt="Image 70">
+</p>
 
 3. Open the **Applications and Resources** dropdown then select **Applications**
 4. Press the **three dots** to the right of **Kennon CRM** then select **Deactivate**
 5. Press the **three dots** to the right of **Kennon Payroll Portal** then select **Deactivate**
 
-# Image 71
+<p align="center">
+  <img src="Images/Image%2071.PNG" alt="Image 71">
+</p>
 
 6. Under **Status** select **Inactive**
 7. Press the **three dots** to the right of **Kennon CRM** then select **Delete**
 8. Press the **three dots** to the right of **Kennon Payroll Portal** then select **Delete**
 
-# Image 72
+<p align="center">
+  <img src="Images/Image%2072.PNG" alt="Image 72">
+</p>
 
 ### Remove the Custom Role and Resource Set
 
 1. Open the **Security** dropdown then **Administrators** then open the **Admins** tab
 2. To the right of **Sam Patel** open the **Edit** dropdown and select **Remove Individual Assignments**
 
-# Image 73
+<p align="center">
+  <img src="Images/Image%2073.PNG" alt="Image 73">
+</p>
 
 3. Open the **Resources** tab then to the right of **Kennon Sales Resources** open the **Edit** dropdown and select **Delete Resource Set**
 
-# Image 74
+<p align="center">
+  <img src="Images/Image%2074.PNG" alt="Image 74">
+</p>
 
 4. Open the **Roles** tab then to the right of **Kennon Password Reset** open the **Edit** dropdown then select **Delete Role**
 
-# Image 75
+<p align="center">
+  <img src="Images/Image%2075.PNG" alt="Image 75">
+</p>
 
 ### Remove the Test Users
 
 1. Open the **Directory** dropdown then select **People** then open **Casey Nguyen's** profile
 2. Open the **More Actions** dropdown then select **Deactivate**
 
-# Image 76
+<p align="center">
+  <img src="Images/Image%2076.PNG" alt="Image 76">
+</p>
 
 3. Press the **Delete** button
 
-# Image 77
+<p align="center">
+  <img src="Images/Image%2077.PNG" alt="Image 77">
+</p>
 
 4. Do the same with **Avery Brooks, Taylor Reed, Sam Patel, and Riley Carter**
 
-# Image 78
+<p align="center">
+  <img src="Images/Image%2078.PNG" alt="Image 78">
+</p>
 
 ### Remove the Target Groups
 
 1. Open the **Directory** dropdown then select **Groups** then open the **Kennon Sales** group
 2. Open the **Actions** dropdown then select **Delete**
 
-# Image 80
+<p align="center">
+  <img src="Images/Image%2080.PNG" alt="Image 80">
+</p>
 
 3. Open the **Kennon Finance** group then open the **Actions** dropdown then select **Delete**
 
-# Image 81
+<p align="center">
+  <img src="Images/Image%2081.PNG" alt="Image 81">
+</p>
 
 ### Verify in the System Log
 
@@ -684,8 +811,10 @@ This phase removes every object created in the lab in reverse order of creation,
    ```
    **Revoke user privilege** events appear for **Sam Patel**, with your admin account as the actor, and **Taylor Reed**, with **Okta System** as the actor because deleting the only app in Taylor's scope revoked the role automatically
 
-# Image 82
-# Image 83
+<p align="center">
+  <img src="Images/Image%2082.PNG" alt="Image 82">
+  <img src="Images/Image%2083.PNG" alt="Image 83">
+</p>
 
 3. Search for role deletions to confirm the custom role was removed:
    ```text
@@ -693,8 +822,10 @@ This phase removes every object created in the lab in reverse order of creation,
    ```
    The delete event appears with **Kennon Password Reset** as the target
 
-# Image 84
-# Image 85
+<p align="center">
+  <img src="Images/Image%2084.PNG" alt="Image 84">
+  <img src="Images/Image%2085.PNG" alt="Image 85">
+</p>
 
 4. Search for resource set deletions to confirm the resource set was removed:
    ```text
@@ -702,8 +833,10 @@ This phase removes every object created in the lab in reverse order of creation,
    ```
    The delete event appears with **Kennon Sales Resources** as the target
 
-# Image 86
-# Image 87
+<p align="center">
+  <img src="Images/Image%2086.PNG" alt="Image 86">
+  <img src="Images/Image%2087.PNG" alt="Image 87">
+</p>
 
 5. Search for application deletions to confirm both test apps were removed:
    ```text
@@ -711,8 +844,10 @@ This phase removes every object created in the lab in reverse order of creation,
    ```
    Delete events appear for **Kennon Payroll Portal** and **Kennon CRM**, both shown as **Bookmark App**
 
-# Image 88
-# Image 89
+<p align="center">
+  <img src="Images/Image%2088.PNG" alt="Image 88">
+  <img src="Images/Image%2089.PNG" alt="Image 89">
+</p>
 
 6. Search for completed user deletions to confirm all five users were removed:
    ```text
@@ -720,8 +855,10 @@ This phase removes every object created in the lab in reverse order of creation,
    ```
    Delete events appear for **Casey Nguyen**, **Avery Brooks**, **Taylor Reed**, **Sam Patel** and **Riley Carter**
 
-# Image 90
-# Image 91
+<p align="center">
+  <img src="Images/Image%2090.PNG" alt="Image 90">
+  <img src="Images/Image%2091.PNG" alt="Image 91">
+</p>
 
 7. Search for group deletions to confirm all three groups were removed:
    ```text
@@ -729,8 +866,10 @@ This phase removes every object created in the lab in reverse order of creation,
    ```
    Delete events appear for **Kennon Help Desk Admins**, **Kennon Sales** and **Kennon Finance**
 
-# Image 92
-# Image 93
+<p align="center">
+  <img src="Images/Image%2092.PNG" alt="Image 92">
+  <img src="Images/Image%2093.PNG" alt="Image 93">
+</p>
 
 ---
 
