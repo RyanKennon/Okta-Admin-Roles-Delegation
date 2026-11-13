@@ -483,7 +483,117 @@ Each admin could only act within their role and scope, showing how Okta enforces
 
 ## 8) Cleanup
 
+### Remove the Group Role Assignment
 
+1. In the **Okta Administrator Console** open the **Security** dropdown then select **Administrators**
+2. Open the **Admins** tab under **View by Assignee** select **Groups**
+3. To the right of **Kennon Help Desk Admins** open the **Edit** dropdown and select **Remove Assignments**
+
+# Image 69
+
+4. Open the **Directory** dropdown then select **Groups** then open the **Kennon Help Desk Admins** group
+5. Open the **Actions** dropdown then select **Delete**
+
+# Image 79
+
+### Remove the App Administrator and Test Apps
+
+1. Under **View by Assignee** select **Users**
+2. To the right of **Taylor Reed** open the **Edit** dropdown and select **Remove Individual Assignments**
+
+# Image 70
+
+3. Open the **Applications and Resources** dropdown then select **Applications**
+4. Press the **three dots** to the right of **Kennon CRM** then select **Deactivate**
+5. Press the **three dots** to the right of **Kennon Payroll Portal** then select **Deactivate**
+
+# Image 71
+
+6. Under **Status** select **Inactive**
+7. Press the **three dots** to the right of **Kennon CRM** then select **Delete**
+8. Press the **three dots** to the right of **Kennon Payroll Portal** then select **Delete**
+
+# Image 72
+
+### Remove the Custom Role and Resource Set
+
+1. Open the **Security** dropdown then **Administrators** then open the **Admins** tab
+2. To the right of **Sam Patel** open the **Edit** dropdown and select **Remove Individual Assignments**
+
+# Image 73
+
+3. Open the **Resources** tab then to the right of **Kennon Sales Resources** open the **Edit** dropdown and select **Delete Resource Set**
+
+# Image 74
+
+4. Open the **Roles** tab then to the right of **Kennon Password Reset** open the **Edit** dropdown then select **Delete Role**
+
+# Image 75
+
+### Remove the Test Users
+
+1. Open the **Directory** dropdown then select **People** then open **Casey Nguyen's** profile
+2. Open the **More Actions** dropdown then select **Deactivate**
+
+# Image 76
+
+3. Press the **Delete** button
+
+# Image 77
+
+4. Do the same with **Avery Brooks, Taylor Reed, Sam Patel, and Riley Carter**
+
+# Image 78
+
+### Remove the Target Groups
+
+1. Open the **Directory** dropdown then select **Groups** then open the **Kennon Sales** group
+2. Open the **Actions** dropdown then select **Delete**
+
+# Image 80
+
+3. Open the **Kennon Finance** group then open the **Actions** dropdown then select **Delete**
+
+# Image 81
+
+### Verify in the System Logs
+
+1. Open the **Reports** dropdown then select **System Log**
+2. In the **Search** function enter the following code:
+   `eventType sw "user.account.privilege.revoke"`
+
+# Image 82
+# Image 83
+
+3. In the **Search** function enter the following code:
+   `eventType eq "iam.role.delete"`
+
+# Image 84
+# Image 85
+
+4. In the **Search** function enter the following code:
+   `eventType eq "iam.resourceset.delete"`
+
+# Image 86
+# Image 87
+
+5. In the **Search** function enter the following code:
+   `eventType eq "application.lifecycle.delete"`
+
+# Image 88
+# Image 89
+
+6. In the **Search** function enter the following code:
+   `eventType eq "user.lifecycle.delete.completed"`
+
+# Image 90
+# Image 91
+
+7. In the **Search** function enter the following code:
+   `eventType eq "group.lifecycle.delete"`
+
+# Image 92
+# Image 93
 
 
 
