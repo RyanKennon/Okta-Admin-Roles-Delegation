@@ -714,7 +714,23 @@ This phase removes every object created in the lab in reverse order of creation,
 # Image 88
 # Image 89
 
-6. Search for completed user deletions to confirm
+6. Search for completed user deletions to confirm all five users were removed:
+   ```text
+   eventType eq "user.lifecycle.delete.completed"
+   ```
+   Delete events appear for **Casey Nguyen**, **Avery Brooks**, **Taylor Reed**, **Sam Patel** and **Riley Carter**
+
+# Image 90
+# Image 91
+
+7. Search for group deletions to confirm all three groups were removed:
+   ```text
+   eventType eq "group.lifecycle.delete"
+   ```
+   Delete events appear for **Kennon Help Desk Admins**, **Kennon Sales** and **Kennon Finance**
+
+# Image 92
+# Image 93
 
 ---
 
