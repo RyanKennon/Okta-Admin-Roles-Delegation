@@ -102,7 +102,7 @@ This phase creates the groups and users that delegated admins will manage, along
    - **User Must Change Password on First Login:** Uncheck
 
 <p align="center">
-  <img src="Images/Image%204.PNG" alt="Image 4">
+  <img src="Images/Image%204.png" alt="Image 4">
 </p>
 
 3. Create the second user with the following information then **Save:**
@@ -117,7 +117,7 @@ This phase creates the groups and users that delegated admins will manage, along
    - **User Must Change Password on First Login:** Uncheck
 
 <p align="center">
-  <img src="Images/Image%205.PNG" alt="Image 5">
+  <img src="Images/Image%205.png" alt="Image 5">
 </p>
 
 ### Create Test Admins
@@ -134,7 +134,7 @@ This phase creates the groups and users that delegated admins will manage, along
    - **User Must Change Password on First Login:** Uncheck
 
 <p align="center">
-  <img src="Images/Image%206.PNG" alt="Image 6">
+  <img src="Images/Image%206.png" alt="Image 6">
 </p>
 
 2. Create the second admin with the following information then **Save and Add Another:**
@@ -149,7 +149,7 @@ This phase creates the groups and users that delegated admins will manage, along
    - **User Must Change Password on First Login:** Uncheck
 
 <p align="center">
-  <img src="Images/Image%207.PNG" alt="Image 7">
+  <img src="Images/Image%207.png" alt="Image 7">
 </p>
 
 3. Create the third admin with the following information then **Save:**
@@ -164,8 +164,8 @@ This phase creates the groups and users that delegated admins will manage, along
    - **User Must Change Password on First Login:** Uncheck
 
 <p align="center">
-  <img src="Images/Image%208.PNG" alt="Image 8">
-  <img src="Images/Image%209.PNG" alt="Image 9">
+  <img src="Images/Image%208.png" alt="Image 8">
+  <img src="Images/Image%209.png" alt="Image 9">
 </p>
 
 ### Enroll Okta Verify for the Test Admins
@@ -202,7 +202,7 @@ This phase creates the groups and users that delegated admins will manage, along
 
 <p align="center">
   <img src="Images/Image%2013.PNG" alt="Image 13">
-  <img src="Images/Image%2014.PNG" alt="Image 14">
+  <img src="Images/Image%2014.png" alt="Image 14">
 </p>
 
 3. Search for authenticator activations to confirm the test admins enrolled Okta Verify:
@@ -213,7 +213,7 @@ This phase creates the groups and users that delegated admins will manage, along
 
 <p align="center">
   <img src="Images/Image%2015.PNG" alt="Image 15">
-  <img src="Images/Image%2016.PNG" alt="Image 16">
+  <img src="Images/Image%2016.png" alt="Image 16">
 </p>
 
 ---
@@ -248,7 +248,7 @@ This phase assigns two standard admin roles and compares what each test admin ca
 3. Confirm there is no ability to change the account such as; **Reset Password, Deactivate, or Edit Profile**
 
 <p align="center">
-  <img src="Images/Image%2019.PNG" alt="Image 19">
+  <img src="Images/Image%2019.png" alt="Image 19">
 </p>
 
 4. Open the **Security** dropdown then **Authentication Policies**
@@ -268,7 +268,7 @@ This phase assigns two standard admin roles and compares what each test admin ca
 3. Confirm there is an ability to **Reset or Remove Password** and to **Reset Authenticators** but no **Deactivate** account option
 
 <p align="center">
-  <img src="Images/Image%2021.PNG" alt="Image 21">
+  <img src="Images/Image%2021.png" alt="Image 21">
 </p>
 
 4. Select **Reset Password** then **Send a Reset Password Email**
@@ -301,7 +301,7 @@ This phase assigns two standard admin roles and compares what each test admin ca
 
 <p align="center">
   <img src="Images/Image%2025.PNG" alt="Image 25">
-  <img src="Images/Image%2026.PNG" alt="Image 26">
+  <img src="Images/Image%2026.png" alt="Image 26">
 </p>
 
 ---
@@ -330,7 +330,7 @@ This phase limits Riley's Help Desk Administrator role from every user to only t
 4. Press **Resend Password Email** then **Reset Password** then **Sign Out**
 
 <p align="center">
-  <img src="Images/Image%2028.PNG" alt="Image 28">
+  <img src="Images/Image%2028.png" alt="Image 28">
 </p>
 
 ### Verify in the System Log
@@ -344,7 +344,7 @@ This phase limits Riley's Help Desk Administrator role from every user to only t
 
 <p align="center">
   <img src="Images/Image%2029.PNG" alt="Image 29">
-  <img src="Images/Image%2030.PNG" alt="Image 30">
+  <img src="Images/Image%2030.png" alt="Image 30">
 </p>
 
 3. Search for password resets started by Riley Carter to confirm Riley can still act inside the scope:
@@ -355,7 +355,7 @@ This phase limits Riley's Help Desk Administrator role from every user to only t
 
 <p align="center">
   <img src="Images/Image%2031.PNG" alt="Image 31">
-  <img src="Images/Image%2032.PNG" alt="Image 32">
+  <img src="Images/Image%2032.png" alt="Image 32">
 </p>
 
 ## 4) Custom Admin Role and Resource Set
@@ -424,7 +424,7 @@ This phase builds a custom admin role with only password reset permissions and l
 3. Press **Reset or Remove Password** then **Sign Out**
 
 <p align="center">
-  <img src="Images/Image%2037.PNG" alt="Image 37">
+  <img src="Images/Image%2037.png" alt="Image 37">
 </p>
 
 
@@ -439,7 +439,7 @@ This phase builds a custom admin role with only password reset permissions and l
 
 <p align="center">
   <img src="Images/Image%2038.PNG" alt="Image 38">
-  <img src="Images/Image%2039.PNG" alt="Image 39">
+  <img src="Images/Image%2039.png" alt="Image 39">
 </p>
 
 3. Search for resource set creation events to confirm the resource set was created:
@@ -450,7 +450,7 @@ This phase builds a custom admin role with only password reset permissions and l
 
 <p align="center">
   <img src="Images/Image%2040.PNG" alt="Image 40">
-  <img src="Images/Image%2041.PNG" alt="Image 41">
+  <img src="Images/Image%2041.png" alt="Image 41">
 </p>
 
 4. Search for privilege changes on Sam Patel to confirm the role swap:
@@ -461,7 +461,7 @@ This phase builds a custom admin role with only password reset permissions and l
 
 <p align="center">
   <img src="Images/Image%2042.PNG" alt="Image 42">
-  <img src="Images/Image%2043.PNG" alt="Image 43">
+  <img src="Images/Image%2043.png" alt="Image 43">
 </p>
 
 5. Search for password resets started by Sam Patel to confirm the custom role works inside its scope:
@@ -472,7 +472,7 @@ This phase builds a custom admin role with only password reset permissions and l
 
 <p align="center">
   <img src="Images/Image%2044.PNG" alt="Image 44">
-  <img src="Images/Image%2045.PNG" alt="Image 45">
+  <img src="Images/Image%2045.png" alt="Image 45">
 </p>
 
 ## 5) App Administrator Scope to One App
@@ -536,7 +536,7 @@ This phase gives Taylor the Application Administrator role limited to a single a
 7. Confirm that Taylor can add assignments to people then close out of that menu
 
 <p align="center">
-  <img src="Images/Image%2051.PNG" alt="Image 51">
+  <img src="Images/Image%2051.png" alt="Image 51">
 </p>
 
 ### Test Taylor's Limits
@@ -545,7 +545,7 @@ This phase gives Taylor the Application Administrator role limited to a single a
 2. Confirm that no option to create users appears
 
 <p align="center">
-  <img src="Images/Image%2052.PNG" alt="Image 52">
+  <img src="Images/Image%2052.png" alt="Image 52">
 </p>
 
 3. **Sign Out** of Taylor Reed's profile
@@ -561,7 +561,7 @@ This phase gives Taylor the Application Administrator role limited to a single a
 
 <p align="center">
   <img src="Images/Image%2053.PNG" alt="Image 53">
-  <img src="Images/Image%2054.PNG" alt="Image 54">
+  <img src="Images/Image%2054.png" alt="Image 54">
 </p>
 
 3. Search for app updates made by Taylor Reed to confirm Taylor could edit the scoped app:
@@ -572,7 +572,7 @@ This phase gives Taylor the Application Administrator role limited to a single a
 
 <p align="center">
   <img src="Images/Image%2055.PNG" alt="Image 55">
-  <img src="Images/Image%2056.PNG" alt="Image 56">
+  <img src="Images/Image%2056.png" alt="Image 56">
 </p>
 
 ## 6) Assign Roles Through a Group
@@ -586,7 +586,7 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
 3. Press the **Trashcan** next to the **Help Desk Administrator** role then **Save Changes**
 
 <p align="center">
-  <img src="Images/Image%2057.PNG" alt="Image 57">
+  <img src="Images/Image%2057.png" alt="Image 57">
 </p>
 
 ### Create the Admin Group
@@ -621,7 +621,7 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
 2. Press **Assign People** then press the **+* next to **Riley Carter** then press **Done**
 
 <p align="center">
-  <img src="Images/Image%2060.PNG" alt="Image 60">
+  <img src="Images/Image%2060.png" alt="Image 60">
 </p>
 
 3. Log in to **Okta** as **Riley Carter** in an **incognito** browser
@@ -629,7 +629,7 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
 5. Press **Resend Password Email**
 
 <p align="center">
-  <img src="Images/Image%2061.PNG" alt="Image 61">
+  <img src="Images/Image%2061.png" alt="Image 61">
 </p>
 
 6. **Sign Out** of Riley Carter's account
@@ -655,7 +655,7 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
 
 <p align="center">
   <img src="Images/Image%2062.PNG" alt="Image 62">
-  <img src="Images/Image%2063.PNG" alt="Image 63">
+  <img src="Images/Image%2063.png" alt="Image 63">
 </p>
 
 3. Search for group membership changes on Riley Carter to confirm Riley was added and removed:
@@ -666,7 +666,7 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
 
 <p align="center">
   <img src="Images/Image%2064.PNG" alt="Image 64">
-  <img src="Images/Image%2065.PNG" alt="Image 65">
+  <img src="Images/Image%2065.png" alt="Image 65">
 </p>
 
 4. Search for password resets started by Riley Carter to confirm the group role worked:
@@ -677,7 +677,7 @@ This phase assigns the Help Desk Administrator role to a group instead of a pers
 
 <p align="center">
   <img src="Images/Image%2066.PNG" alt="Image 66">
-  <img src="Images/Image%2067.PNG" alt="Image 67">
+  <img src="Images/Image%2067.png" alt="Image 67">
 </p>
 
 ---
@@ -772,19 +772,19 @@ This phase removes every object created in the lab in reverse order of creation,
 2. Open the **More Actions** dropdown then select **Deactivate**
 
 <p align="center">
-  <img src="Images/Image%2076.PNG" alt="Image 76">
+  <img src="Images/Image%2076.png" alt="Image 76">
 </p>
 
 3. Press the **Delete** button
 
 <p align="center">
-  <img src="Images/Image%2077.PNG" alt="Image 77">
+  <img src="Images/Image%2077.png" alt="Image 77">
 </p>
 
 4. Do the same with **Avery Brooks, Taylor Reed, Sam Patel, and Riley Carter**
 
 <p align="center">
-  <img src="Images/Image%2078.PNG" alt="Image 78">
+  <img src="Images/Image%2078.png" alt="Image 78">
 </p>
 
 ### Remove the Target Groups
@@ -813,7 +813,7 @@ This phase removes every object created in the lab in reverse order of creation,
 
 <p align="center">
   <img src="Images/Image%2082.PNG" alt="Image 82">
-  <img src="Images/Image%2083.PNG" alt="Image 83">
+  <img src="Images/Image%2083.png" alt="Image 83">
 </p>
 
 3. Search for role deletions to confirm the custom role was removed:
@@ -824,7 +824,7 @@ This phase removes every object created in the lab in reverse order of creation,
 
 <p align="center">
   <img src="Images/Image%2084.PNG" alt="Image 84">
-  <img src="Images/Image%2085.PNG" alt="Image 85">
+  <img src="Images/Image%2085.png" alt="Image 85">
 </p>
 
 4. Search for resource set deletions to confirm the resource set was removed:
@@ -835,7 +835,7 @@ This phase removes every object created in the lab in reverse order of creation,
 
 <p align="center">
   <img src="Images/Image%2086.PNG" alt="Image 86">
-  <img src="Images/Image%2087.PNG" alt="Image 87">
+  <img src="Images/Image%2087.png" alt="Image 87">
 </p>
 
 5. Search for application deletions to confirm both test apps were removed:
@@ -846,7 +846,7 @@ This phase removes every object created in the lab in reverse order of creation,
 
 <p align="center">
   <img src="Images/Image%2088.PNG" alt="Image 88">
-  <img src="Images/Image%2089.PNG" alt="Image 89">
+  <img src="Images/Image%2089.png" alt="Image 89">
 </p>
 
 6. Search for completed user deletions to confirm all five users were removed:
@@ -857,7 +857,7 @@ This phase removes every object created in the lab in reverse order of creation,
 
 <p align="center">
   <img src="Images/Image%2090.PNG" alt="Image 90">
-  <img src="Images/Image%2091.PNG" alt="Image 91">
+  <img src="Images/Image%2091.png" alt="Image 91">
 </p>
 
 7. Search for group deletions to confirm all three groups were removed:
@@ -868,7 +868,7 @@ This phase removes every object created in the lab in reverse order of creation,
 
 <p align="center">
   <img src="Images/Image%2092.PNG" alt="Image 92">
-  <img src="Images/Image%2093.PNG" alt="Image 93">
+  <img src="Images/Image%2093.png" alt="Image 93">
 </p>
 
 ---
